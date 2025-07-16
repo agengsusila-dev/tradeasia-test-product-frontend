@@ -1,18 +1,15 @@
 # Tradeasia Test Product Frontend
 
-Frontend publik untuk tugas technical test Web Developer Intern di **Tradeasia**. Proyek ini dibangun menggunakan **HTML**, **jQuery**, dan **Bootstrap**, dan berfungsi untuk mengonsumsi API dari backend Laravel.
+Frontend publik untuk technical test Web Developer Intern di **Tradeasia**. Proyek ini dibangun menggunakan **HTML**, **jQuery**, dan **Bootstrap**, dan berfungsi untuk mengonsumsi API dari backend Laravel.
 
 ## 📌 Fitur
 
-- Menampilkan minimal 5 produk dari API publik.
 - Menampilkan: gambar, nama, HS Code, CAS Number.
 - Tombol “Lihat Detail” membuka modal berisi:
   - Deskripsi
   - Aplikasi
   - Meta Title, Meta Keyword, Meta Description
 - Fitur ganti bahasa (EN / ID), otomatis memuat ulang data.
-- Tampilan responsif menggunakan Bootstrap 5.
-- Tersedia Navbar dan Footer dengan area logo perusahaan.
 
 ## 🚀 Teknologi
 
