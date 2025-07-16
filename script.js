@@ -20,6 +20,7 @@ const translations = {
         labelMetaKeyword: "Meta Keyword",
         labelMetaDescription: "Meta Description",
         nullLabel: "No product data available",
+        errorLabel: "An error occurred while fetching product data.",
     },
     id: {
         title: "Produk Kami",
@@ -39,6 +40,7 @@ const translations = {
         labelMetaKeyword: "Kata Kunci Meta",
         labelMetaDescription: "Deskripsi Meta",
         nullLabel: "Data produk tidak tersedia",
+        errorLabel: "Terjadi kesalahan saat mengambil data produk.",
     },
 };
 
@@ -79,6 +81,12 @@ function fetchProducts(lang = "en") {
             </div>
         `);
         });
+    }).fail(function () {
+        $("#product-list").empty().append(`
+            <div class="col-12 text-center text-muted">
+                <p>${translations[lang].errorLabel}</p>
+            </div>
+        `);
     });
 }
 
