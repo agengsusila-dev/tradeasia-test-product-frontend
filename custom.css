@@ -1,0 +1,17 @@
+footer {
+    background-image: url(/assets/images/footer-bg.webp);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    padding: 20px 0;
+}
+
+.navbar-dark {
+    background-color: #003366;
+}
+
+.navbar-brand img,
+footer img {
+    height: 40px;
+}

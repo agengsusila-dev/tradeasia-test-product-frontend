@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tradeasia Product List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/tradeasia-logo-white.webp" class="w-10" alt="Logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="navbar-text text-white ms-2" id="nav-product-text">Produk</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="text-white"
+        style="background-image: url('assets/images/bn-product.webp'); background-size: cover; background-position: center; height: 250px; position: relative;">
+        <div class="container h-100 d-flex flex-column justify-content-center">
+            <h2 class="display-4 fw-bold" id="hero-text">Katalog Produk</h2>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 id="page-title">Produk Kimia</h2>
+            <select id="lang-select" class="form-select w-auto">
+                <option value="en">English</option>
+                <option value="id">Bahasa</option>
+            </select>
+        </div>
+
+        <div class="row" id="product-list">
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="product-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong id="label-description">Description:</strong> <span id="product-description"></span></p>
+                    <p><strong id="label-application">Application:</strong> <span id="product-application"></span></p>
+                    <p><strong id="label-meta-title">Meta Title:</strong> <span id="meta-title"></span></p>
+                    <p><strong id="label-meta-keyword">Meta Keyword:</strong> <span id="meta-keyword"></span></p>
+                    <p><strong id="label-meta-description">Meta Description:</strong> <span
+                            id="meta-description"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container mb-3 p-4">
+            <img src="assets/images/tradeasia-logo-white.webp" alt="Logo Tradeasia" width="163" class="h-auto">
+            <div class="row align-items-start">
+                <div class="col-lg-4 col-md-12" id="footer-card">
+                    <p class="text-light mt-3 fw-semibold">Tradeasia International Pte. Ltd</p>
+                    <p class="text-light mb-0 mt-2">Keck Seng Tower</p>
+                    <p class="text-light mb-0">133 Cecil Street #12-03</p>
+                    <p class="text-light">Singapore, 069535, Republic of Singapore</p>
+                    <p class="mb-2">
+                        <a href="mailto:contact@chemtradeasia.com" class="text-light text-decoration-none">
+                            <i class="bi bi-envelope"></i> contact@chemtradeasia.com
+                        </a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="tel:+65 6227 6365" class="text-light text-decoration-none">
+                            <i class="bi bi-telephone"></i> +65 6227 6365
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-md-12" id="footer-card">
+                    <p class="text-light mb-2 mt-3" id="information-text">Information</p>
+                    <p class="text-light mb-2" id="location-text">Location</p>
+                    <p class="text-light mb-2" id="faq-text">FAQ</p>
+                    <p class="text-light mb-2" id="privacy-policy-text">Privacy Policy</p>
+                    <p class="text-light mb-2" id="tnc-text">Terms and Condition</p>
+                </div>
+
+                <div class="col-lg-4 col-md-12" id="footer-card">
+                    <p class="text-light mb-2 mt-3" id="download-text">Download our Mobile App</p>
+                    <div class="download-img">
+                        <a href="https://apps.apple.com/sk/app/tradeasia/id6478198700" class="mr-cstm"
+                            title="Download Our IOS App">
+                            <img src="https://chemtradea.chemtradeasia.com/chemtradeasia-new/mauritius/apple-footer.webp"
+                                alt="Apps Tradeasia iOS">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.app.btwob&amp;pcampaignid=web_share"
+                            title="Download Android Apps">
+                            <img src="https://chemtradea.chemtradeasia.com/chemtradeasia-new/mauritius/google-footer.webp"
+                                alt="Apps Tradeasia Play Store">
+                        </a>
+                    </div>
+
+                    <p class="text-light mb-2 mt-3" id="social-media-text">Connect with Us</p>
+                    <div class="social-media">
+                        <a id="facebook" href="javascript:;" onclick="facebook();return false;"
+                            aria-label="Follow Us On Facebook" title="Facebook"><svg width="20" height="20"
+                                viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"
+                                    fill="#fff"></path>
+                            </svg></a>
+                        <a id="instagram" href="javascript:;" onclick="instagram();return false;"
+                            aria-label="Follow Us On Instagram" title="Instagram"><svg width="20" height="20"
+                                style="margin:0px 5px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1152 896q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm138 0q0 164-115 279t-279 115-279-115-115-279 115-279 279-115 279 115 115 279zm108-410q0 38-27 65t-65 27-65-27-27-65 27-65 65-27 65 27 27 65zm-502-220q-7 0-76.5-.5t-105.5 0-96.5 3-103 10-71.5 18.5q-50 20-88 58t-58 88q-11 29-18.5 71.5t-10 103-3 96.5 0 105.5.5 76.5-.5 76.5 0 105.5 3 96.5 10 103 18.5 71.5q20 50 58 88t88 58q29 11 71.5 18.5t103 10 96.5 3 105.5 0 76.5-.5 76.5.5 105.5 0 96.5-3 103-10 71.5-18.5q50-20 88-58t58-88q11-29 18.5-71.5t10-103 3-96.5 0-105.5-.5-76.5.5-76.5 0-105.5-3-96.5-10-103-18.5-71.5q-20-50-58-88t-88-58q-29-11-71.5-18.5t-103-10-96.5-3-105.5 0-76.5.5zm768 630q0 229-5 317-10 208-124 322t-322 124q-88 5-317 5t-317-5q-208-10-322-124t-124-322q-5-88-5-317t5-317q10-208 124-322t322-124q88-5 317-5t317 5q208 10 322 124t124 322q5 88 5 317z"
+                                    fill="#fff"></path>
+                            </svg></a>
+                        <a id="linkedin" href="javascript:;" onclick="linkedin();return false;"
+                            aria-label="Join Us On Linkedin" title="Follow Us On Linkedin"><svg width="20" height="20"
+                                viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"
+                                    fill="#fff"></path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="text-center">
+        <div class="flex justify-content-center align-items-center p-3">
+            <small>© 2025 Tradeasia Tech Test - Ageng Susila</small>
+        </div>
+    </div>
+</body>
+
+
+</html>
