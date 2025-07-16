@@ -3,7 +3,7 @@ let currentLang = "en";
 
 const translations = {
     en: {
-        title: "Chemical Products",
+        title: "Our Product",
         detail: "View Details",
         hero: "Product Catalog",
         productNav: "Product",
@@ -19,9 +19,10 @@ const translations = {
         labelMetaTitle: "Meta Title",
         labelMetaKeyword: "Meta Keyword",
         labelMetaDescription: "Meta Description",
+        nullLabel: "No product data available",
     },
     id: {
-        title: "Produk Kimia",
+        title: "Produk Kami",
         detail: "Lihat Detail",
         hero: "Katalog Produk",
         productNav: "Produk",
@@ -37,12 +38,22 @@ const translations = {
         labelMetaTitle: "Judul Meta",
         labelMetaKeyword: "Kata Kunci Meta",
         labelMetaDescription: "Deskripsi Meta",
+        nullLabel: "Data produk tidak tersedia",
     },
 };
 
 function fetchProducts(lang = "en") {
     $.get(`${API_BASE}/${lang}/products/`, function (data) {
         $("#product-list").empty();
+        if (!data.length) {
+            $("#product-list").append(`
+                <div class="col-12 text-center text-muted">
+                    <p>${translations[lang].nullLabel}</p>
+                </div>
+            `);
+            return;
+        }
+
         data.slice(0, 10).forEach((product, index) => {
             $("#product-list").append(`
             <div class="col-md-4 mb-4">
